@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <limits.h>
 
 void check_magic_number(void)
 {
@@ -11,7 +12,10 @@ int absolute_int(int x)
 {
     int abs_x;
     if (x < 0)
-        abs_x = -x;
+        if (x == INT_MIN)
+            abs_x = 42;
+        else
+            abs_x = -x;
     else
         abs_x = x;
     return abs_x;
