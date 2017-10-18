@@ -3,7 +3,7 @@
 
 void check_magic_number(void)
 {
-    short tmp = 0x3210;
+    short tmp = (short)(0x1234 << 8);
     char c = ((char *)&tmp)[0];
     int i = 0 << (int)c;
 }
